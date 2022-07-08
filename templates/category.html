@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+{% for article in articles_page.object_list %}
+        {% if loop.first %}
+            <div class="row row-cols-1 row-cols-md-3">
+            {% endif %}
+            <div class="col mb-4">
+                <div class="card">
+                    <a class="text-reset text-decoration-none" href="{{ SITEURL }}/{{ article.url }}">
+                        <img src="{% if not article.image %}{{ SITEURL }}/theme/images/leadin-background.jpg{% endif %}{{ article.image }}" class="card-img-top">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title"><a class="text-reset text-decoration-none" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h5>
+                        <p class="card-text"><a class="text-reset text-decoration-none" href="{{ SITEURL }}/{{ article.url }}">{{ article.summary|truncate(60) }}</a></p>
+                        <small class="text-muted">{{ article.date|strftime('%B %d, %Y') }} by {% if article.author != '' %}<a href="#">{{ article.author }}</a></small>{% endif %}
+                    </div>
+                </div>
+            </div>
+            {% if loop.last %}
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+    {% if DEFAULT_PAGINATION %}
+    {% include 'pagination.html' %}
+    {% endif %}
+</div>
+{% endblock %}

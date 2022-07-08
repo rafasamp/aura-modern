@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
+<head>
+{% block head %}
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       <meta name="generator" content="Pelican" />
+       <title>{% block title %} {{ SITENAME }} {% endblock %}</title>
+       {% if FAVICON %}
+       <link rel="icon" type="image/png" href="{{ SITEURL }}/images/{{ FAVICON }}">
+       {% endif %}
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" referrerpolicy="no-referrer"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0-beta1/js/bootstrap.min.js" integrity="sha512-Hqe3s+yLpqaBbXM6VA0cnj/T56ii5YjNrMT9v+us11Q81L0wzUG0jEMNECtugqNu2Uq5MSttCg0p4KK0kCPVaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+       <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/style.css" />
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0-beta1/css/bootstrap.min.css" integrity="sha512-o/MhoRPVLExxZjCFVBsm17Pkztkzmh7Dp8k7/3JrtNCHh0AQ489kwpfA3dPSHzKDe8YCuEhxXq3Y71eb/o6amg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+       {% if FEED_ALL_ATOM %}
+       <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+       {% endif %}
+       {% if FEED_ALL_RSS %}
+       <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+       {% endif %}
+{% endblock head %}
+</head>
+<body>
+{% include 'analytics.html' %}
+<main>
+       <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <div class="container">
+                     <a class="navbar-brand" href="/">
+                            {% if LOGO %}
+                            <img src="{{ SITEURL }}/images/{{ LOGO }}" width="30" height="30" class="d-inline-block align-top" alt="">
+                            {% endif %}
+                            {{ SITENAME }}
+                     </a>
+                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                     </button>
+                     <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                   <li class="nav-item active">
+                                          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                                   </li>
+                                   <!-- Categories -->
+                                   {% for cat, null in categories %}
+                                   {% if cat != "misc" %}
+                                   <li class="nav-item">
+                                          <a class="nav-link {% if cat == category %} active{% endif %}" href="{{ SITEURL }}/{{ cat.url }}" {% if cat == category %} aria-current="page"{% endif %}>{{ cat }}</a>
+                                   </li>
+                                   {% endif %}
+                                   {% endfor %}
+
+                                   <!-- Static Pages -->
+                                   {% for p in pages %}
+                                   <li class="nav-item">
+                                          <a class="nav-link {% if p == page %} active{% endif %}" href="{{ SITEURL }}/{{ p.url }}" {% if p == page %} aria-current="page"{% endif %}>{{ p.title }}</a>
+                                   </li>
+                                   {% endfor %}
+                            </ul>
+                     </div>
+              </div>   
+       </nav>
+</main>
+{% block content %}
+{% endblock content %}
+</body>
+{% include 'footer.html' %}

@@ -1,0 +1,18 @@
+{% if DEFAULT_PAGINATION %}
+<div class="container text-center">
+    <nav class="blog-pagination" aria-label="Pagination">
+        {% if articles_page.has_next() %}
+        <a class="btn btn-outline-primary rounded-pill" href="{{ SITEURL }}/{{ articles_next_page.url }}">Older</a>
+        {% endif %}
+        {% if not articles_page.has_next() %}
+        <a class="btn btn-outline-secondary rounded-pill disabled" href="#">Older</a>
+        {% endif %}
+        {% if not articles_page.has_previous() %}
+        <a class="btn btn-outline-secondary rounded-pill disabled" href="#">Newer</a>
+        {% endif %}
+        {% if articles_page.has_previous() %}
+        <a class="btn btn-outline-primary rounded-pill" href="{{ SITEURL }}/{{ articles_previous_page.url }}">Newer</a>
+        {% endif %}
+    </nav>
+</div>
+{% endif %}

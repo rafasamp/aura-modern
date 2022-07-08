@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<div class="container">
+    <h1>Archives</h1>
+    <br>
+    <div class="list-group">
+        {% for article in dates %}
+        <a href="{{ SITEURL }}/{{ article.url }}" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{ article.title }}</h5>
+                <small class="text-muted">{{ article.date|strftime('%B %d, %Y') }}</small>
+            </div>
+            <p class="mb-1">{{ article.summary }}</p>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

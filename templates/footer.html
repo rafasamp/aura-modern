@@ -1,0 +1,30 @@
+<div class="container my-5">
+       <footer class="text-center text-black bg-light border-top">
+       {% if SOCIAL %}
+       <!-- Grid container -->
+       <div class="container pt-4">
+         <!-- Section: Social media -->
+         <section class="mb-4">
+              {% for name, url in SOCIAL %}
+           <a
+             class="btn btn-link btn-floating btn-lg text-dark m-1"
+             href="{{ url }}"
+             role="button"
+             data-mdb-ripple-color="dark"
+             ><i class="fa fa-{{ name }}"></i
+           ></a>
+           {% endfor %}
+         <!-- Section: Social media -->
+       </div>
+       <!-- Grid container -->
+       {% endif %}
+       
+       <!-- Copyright -->
+       <div class="text-center text-dark p-3 bg-dark text-white">
+              &copy; <script>document.write(new Date().getFullYear())</script> {{ AUTHOR }}
+              <br>
+              <small>Powered by <a href="https://getpelican.com">Pelican</a> and <a href="https://github.com/rafasamp/aura-modern">Aura Modern</a></small>
+       </div>
+       <!-- Copyright -->
+     </footer>   
+</div>
