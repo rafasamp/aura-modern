@@ -15,7 +15,7 @@
        <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/style.css" />
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0-beta1/css/bootstrap.min.css" integrity="sha512-o/MhoRPVLExxZjCFVBsm17Pkztkzmh7Dp8k7/3JrtNCHh0AQ489kwpfA3dPSHzKDe8YCuEhxXq3Y71eb/o6amg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-       {% if FEED_ALL_ATOM %}
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/color-brewer.min.css" integrity="sha512-SJm3cAu//Nn6+cv90D0Ue8ArsnjDlszVGE3o/0JX55VOd9/KVbSGTegrZhyNK6ttKMeLbR14ezeGWyBUmF1Aww==" crossorigin="anonymous" referrerpolicy="no-referrer" />       {% if FEED_ALL_ATOM %}
        <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
        {% endif %}
        {% if FEED_ALL_RSS %}
