@@ -59,7 +59,7 @@ MONTH_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/index.html'
 
 ## Notes
 
-- Syntax highlighting is fully supported using highlight.js, however, the default Pelican library does not embed code in <pre> or <code> tags, therefore, you must do it yourself on your posts for it to work. This is not a problem on my site since [all my postings are on html format which is fully supported by Pelican](https://docs.getpelican.com/en/latest/content.html#file-metadata).
+- Syntax highlighting is fully supported using highlight.js, however, the default Pelican library does not embed code in ```<pre>``` or ```<code>``` tags, therefore, you must do it yourself on your posts for it to work. This is not a problem on my site since [all my postings are on html format which is fully supported by Pelican](https://docs.getpelican.com/en/latest/content.html#file-metadata).
 
 ## License
 
