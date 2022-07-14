@@ -1,6 +1,6 @@
 # Aura Modern Pelican Theme
 
-Aura Modern is a Pelican theme built from the ground up using Bootstrap 5. You can check out a live example at [rafaelsampaio.net](https://www.rafaelsampaio.net/).
+Aura Modern is a Pelican theme built from the ground up using Bootstrap 5.
 
 ## Focus
 
@@ -15,17 +15,6 @@ Aura Modern is a Pelican theme built from the ground up using Bootstrap 5. You c
 - Integrated comments with Disqus and analytics via Google Analytics
 - Social media buttons
 - Easy to customize (feel free to fork!)
-
-## Missing Features
-Check out the [TODO](TODO) file for a list of things I am planning on supporting or adding to the theme.
-
-## Screenshots
-
-Coming soon
-
-## How To Use
-
-Coming soon
 
 ```python
 ### Theme Settings ###
